@@ -1,5 +1,6 @@
+:: Downloads Organizer - Background Process Launcher
+:: This script launches the downloads organizer using pythonw.exe (no console window)
+:: Uses the Python interpreter from the virtual environment
+
 @echo off
-cd %~dp0
-call venv\Scripts\activate
-python downloads_organizer.py
-pause
+start /B "" "%~dp0venv\Scripts\pythonw.exe" "%~dp0downloads_organizer.py"

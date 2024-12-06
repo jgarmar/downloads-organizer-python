@@ -103,13 +103,27 @@ def signal_handler(signum, frame):
     sys.exit(0)
 
 def main():
-    # Save PID for process control
-    pid = os.getpid()
+    # Check if there's already an instance running
     pid_file = "downloads_organizer.pid"
-    
+    if os.path.exists(pid_file):
+        try:
+            with open(pid_file, 'r') as f:
+                old_pid = int(f.read().strip())
+            try:
+                os.kill(old_pid, 0)  # Check if process exists
+                logging.warning(f"An instance is already running with PID {old_pid}")
+                sys.exit(1)
+            except OSError:
+                # Process doesn't exist, we can continue
+                pass
+        except Exception as e:
+            logging.error(f"Error checking existing process: {e}")
+
+    # Save current process PID
+    pid = os.getpid()
     with open(pid_file, "w") as f:
         f.write(str(pid))
-    
+
     logging.info(f"Organizer started with PID: {pid}")
     
     # Register signal handlers for controlled shutdown
