@@ -56,7 +56,7 @@ Downloads/
 ## Instalación 🔧
 1. Clonar el repositorio
    ```bash
-   git clone [URL_del_repositorio]
+   git clone https://github.com/Jaolmos/downloads-organizer-python.git
    ```
 
 2. Crear entorno virtual
