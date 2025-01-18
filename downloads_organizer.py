@@ -29,6 +29,7 @@ EXTENSIONS = {
     'music': ['.mp3', '.wav', '.flac', '.m4a', '.ogg', '.midi', '.aac', '.wma'],
     'programs': ['.exe', '.msi', '.app', '.bat', '.cmd', '.py', '.jar', '.dll'],
     'compressed': ['.zip', '.rar', '.7z', '.tar', '.gz', '.bz2', '.xz', '.iso'],
+    '3d_printing': ['.stl', '.obj', '.3mf', '.f3d'],
     'others': []  # For files that don't match any category
 }
 
@@ -150,7 +151,7 @@ def main():
             time.sleep(7200)  # 2 hours = 7200 seconds
 
     except Exception as e:
-        logging.error(f"Error in main program: {str(e)}")
+        logging.error(f"Error in main program: {str(e)})
     finally:
         # Final cleanup
         if os.path.exists(pid_file):

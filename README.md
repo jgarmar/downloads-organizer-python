@@ -89,6 +89,7 @@ El script organiza automáticamente los archivos después de 24 horas en:
 - 🎵 Music (.mp3, .wav, .flac, etc.)
 - 🗜️ Compressed (.zip, .rar, .7z, etc.)
 - 💿 Programs (.exe, .msi)
+- 🖨️ 3D Printing (.stl, .obj, .orca, .f3d)
 - 📁 Others (archivos no categorizados)
 
 ## Notas Importantes ⚠️
